@@ -35,4 +35,9 @@ if node['smokeping']['slave_mode']
     )
   end
   tag('smokeping_slave')
+  # TODO: This really belongs elsewhere
+  template '/usr/local/sbin/slave_startup.sh' do
+    source 'slave_startup.sh.erb'
+    mode '0755'
+  end
 end
